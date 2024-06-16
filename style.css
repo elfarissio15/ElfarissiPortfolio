@@ -47,6 +47,9 @@ body {
     .inpt:focus {
         background-color: #adb3b5;
     }
+    footer{
+        border-top:1px solid white ;
+    }
 }
 
 header {
@@ -573,6 +576,7 @@ input[type="button"] {
     max-width: 700px;
     align-items: center;
     text-align: center ;
+    padding: 10px 0px;
 }
 
 .input-row,
@@ -659,13 +663,13 @@ input[type="button"] {
 
 .annoncement{
     background-color: gray;
-    width: 100%;
+    width: 100vw;
     height: fit-content;
     display: flex;
     flex-direction: column;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 10px 0px;
     margin: 30px 0px;
     h1,h3{
         margin: 0;
@@ -694,6 +698,14 @@ input[type="button"] {
     .input-row {
         flex-direction: column;
     }
+    .inpt{
+        width: 90vw;
+    }
+
+}
+footer{
+    text-align: center;
+    border-top:1px solid black ;
 }
 
 @media only screen and (max-width: 550px) {
