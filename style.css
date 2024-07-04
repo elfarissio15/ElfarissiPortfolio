@@ -161,6 +161,9 @@ header {
     transition: bottom 0.3s;
 }
 
+#phpsvg{
+    scale:1.2;
+}
 .back-to-top:hover {
     background-color: #0e5fc9;
 }
