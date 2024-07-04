@@ -64,6 +64,7 @@ header {
     display: flex;
     justify-content: center;
     transition: all .5s;
+    z-index:1;
 }
 
 .wrap-check-44 input[type="checkbox"] {
