@@ -162,7 +162,8 @@ header {
 }
 
 #phpsvg{
-    scale:1.4;
+    scale:1.5;
+    margin:10px;
 }
 .back-to-top:hover {
     background-color: #0e5fc9;
