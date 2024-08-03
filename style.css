@@ -1,7 +1,33 @@
+@font-face {
+    font-family: 'MyCustomFont1';
+    src: url('./fonts/2cca21a49f7dad1daa612d73d50357644671964a.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MyCustomFont2';
+    src: url('./fonts/customer_font_94250297e93b374af2850ec3afe7755ece938b5bbd6515455acab35d2c79a591_GlovoSans-Medium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MyCustomFont3';
+    src: url('./fonts/customer_font_6594a65ebe90997b22399732ca1d7639567b88ebc9159fcfacd00498819f5d17_GlovoSans-Book.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MyCustomFont4';
+    src: url('./fonts/pxiEyp8kv8JHgFVrJJfecg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body {
     margin: 0;
     padding: 0;
-    font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "MyCustomFont2",sans-serif;
     scroll-behavior: smooth;
     padding-top: 80px;
     transition: all 0.5s;
