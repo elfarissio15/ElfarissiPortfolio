@@ -22,6 +22,15 @@ function toggleMenu() {
     }
 }
 
+window.addEventListener('DOMContentLoaded', function() {
+    const checkbox = document.getElementById('CheckingDarkMode');
+    
+    setTimeout(function() {
+        checkbox.checked = true;
+        toggleThemeDark();
+    }, 500);
+});
+
 document.addEventListener('click', function(event) {
     var navbar = document.getElementById('mobile-menu');
     var isClickInsideNavbar = navbar.contains(event.target);
