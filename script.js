@@ -76,3 +76,93 @@ window.onscroll = function() {
         backToTopBtn.style.display = "none";
     }
 };
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('inputs-informations');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+    const submitButton = form.querySelector('.submit-btn');
+
+    let isSubmitting = false;  // Track form submission state
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();  // Prevent default form submission
+        let errors = [];
+
+        // Clear any previous error messages
+        document.querySelectorAll('.error-message').forEach(error => error.remove());
+
+        // Validate Name input
+        if (nameInput.value.trim() === '') {
+            errors.push({ field: nameInput, message: 'Please enter your name.' });
+        }
+
+        // Validate Email input
+        if (emailInput.value.trim() === '') {
+            errors.push({ field: emailInput, message: 'Please enter your email.' });
+        } else if (!validateEmail(emailInput.value)) {
+            errors.push({ field: emailInput, message: 'Please enter a valid email address.' });
+        }
+
+        // Validate Message input
+        if (messageInput.value.trim() === '') {
+            errors.push({ field: messageInput, message: 'Please enter your message.' });
+        }
+
+        // Show errors if any exist
+        if (errors.length > 0) {
+            errors.forEach(error => {
+                const errorElement = document.createElement('div');
+                errorElement.className = 'error-message';
+                errorElement.style.color = 'red';
+                errorElement.textContent = error.message;
+                error.field.parentNode.appendChild(errorElement);
+            });
+            return;  // Stop form submission if errors exist
+        }
+
+        // If form is already being submitted, do not allow multiple submissions
+        if (isSubmitting) {
+            return;
+        }
+
+        // Disable the submit button and set the submission state
+        isSubmitting = true;
+        submitButton.textContent = 'Sending...';
+        submitButton.disabled = true;
+
+        // Proceed to send the form (using XMLHttpRequest or fetch)
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            isSubmitting = false;  // Reset submission state
+            submitButton.textContent = 'Send Message';
+            submitButton.disabled = false;
+
+            if (data.status === 'success') {
+                alert('Message sent successfully!');
+                form.reset();  // Clear the form fields
+            } else {
+                alert('Error sending message: ' + data.message);
+            }
+        })
+        .catch(error => {
+            isSubmitting = false;
+            submitButton.textContent = 'Send Message';
+            submitButton.disabled = false;
+            alert('There was an error sending the message.');
+        });
+    });
+
+    // Function to validate email using regex
+    function validateEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(String(email).toLowerCase());
+    }
+});
