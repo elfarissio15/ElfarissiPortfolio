@@ -38,7 +38,8 @@ body {
     color: #F5F5F5;
 
     #AboutButton,
-    #LiveViewButton {
+    #LiveViewButton,
+    #UnderMaitenanceButton {
         color: rgb(255, 255, 255);
     }
 
@@ -510,6 +511,12 @@ input[type="button"] {
     background-color: #1E6ABD;
 }
 
+#UnderMaitenanceButton{
+    background-color: transparent;
+    border: 2px solid rgb(160, 46, 46);
+    color: black;
+}
+
 #LiveViewButton:hover {
     background-color: gray;
     scale: 1.1;
@@ -517,6 +524,12 @@ input[type="button"] {
 
 #SourceCodeButton:hover {
     background-color: #175da7;
+    scale: 1.1;
+}
+
+#UnderMaitenanceButton:hover {
+    border: none;
+    background-color: #12811d;
     scale: 1.1;
 }
 
