@@ -513,7 +513,7 @@ input[type="button"] {
 
 #UnderMaitenanceButton{
     background-color: transparent;
-    border: 2px solid rgb(160, 46, 46);
+    border: 2px solid #12811d;
     color: black;
 }
 
