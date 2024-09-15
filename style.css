@@ -528,7 +528,6 @@ input[type="button"] {
 }
 
 #UnderMaitenanceButton:hover {
-    border: none;
     background-color: #12811d;
     scale: 1.1;
 }
